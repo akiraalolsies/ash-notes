@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashlyn Notes 💖</title>
+<style>
+  body {
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom, #ffe6f0, #fff0f5);
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  header {
+    text-align: center;
+    padding: 20px;
+    background: #ff7f9c;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+  }
+  .container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px rgba(0,0,0,0.2);
+  }
+  button {
+    padding: 10px 25px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  button#morning {
+    background-color: #ff7f9c;
+    color: white;
+  }
+  button#night {
+    background-color: #9370db;
+    color: white;
+  }
+  #noteDisplay {
+    margin-top: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: left;
+    white-space: pre-wrap;
+  }
+</style>
+</head>
+<body>
+
+<header>Ashlyn Notes 💖</header>
+
+<div class="container">
+  <div>
+    <button id="morning">Good Morning Note</button>
+    <button id="night">Good Night Note</button>
+  </div>
+  <div id="noteDisplay">Press a button to see your note 💌</div>
+</div>
+
+<script>
+const morningNotes = [
+`Good morning, Ashlyn. I hope you woke up feeling as beautiful and amazing as you truly are. Today, remember that you are stronger than any obstacle. Take a deep breath, smile, and know that I’m always here, loving you endlessly. Don’t let worries steal the brightness from your morning, because you deserve peace and joy. Love, Akiraa.`,
+`Good morning, my love. Rise and shine knowing that your heart is full of light and your spirit is strong. Today, take each step with confidence and grace, and remember that my love surrounds you always. Love, Akiraa.`,
+// ... add remaining morning notes here
+];
+
+const nightNotes = [
+`Good night, Ashlyn. Lay down and release every worry. You are safe, loved, and valued beyond measure. Dream peacefully and wake up refreshed for a new day. Love, Akiraa.`,
+`My love, good night. Let your mind rest and your heart feel my love surrounding you. Forget today’s troubles and know you are perfect just as you are. Love, Akiraa.`,
+// ... add remaining night notes here
+];
+
+function getRandomNote(notesArray) {
+  const index = Math.floor(Math.random() * notesArray.length);
+  return notesArray[index];
+}
+
+document.getElementById("morning").addEventListener("click", () => {
+  document.getElementById("noteDisplay").innerText = getRandomNote(morningNotes);
+});
+
+document.getElementById("night").addEventListener("click", () => {
+  document.getElementById("noteDisplay").innerText = getRandomNote(nightNotes);
+});
+</script>
+
+</body>
+</html>
